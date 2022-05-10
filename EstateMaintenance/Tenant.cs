@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstateMaintenance
 {
-    internal class Tenant
+    public class Tenant
     {
         public Guid Id { get; set; }
 

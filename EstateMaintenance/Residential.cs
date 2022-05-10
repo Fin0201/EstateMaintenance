@@ -7,19 +7,23 @@ using static EstateMaintenance.Enums;
 
 namespace EstateMaintenance
 {
-    internal class Residential : IProperty
+    public class Residential : IProperty
     {
         public Guid Id { get; set; }
         public string Address { get; set; }
         public ResidentialType Type { get; set; }
         public int NumberOfBedrooms { get; set; }
-
-        public Residential(string address, ResidentialType type, int numberOfBedrooms)
+        public Tenant CurrentTenant { get; set; }
+        public List<IIssue> Issues { get; set; }
+        public Residential(string address, ResidentialType type, int numberOfBedrooms, Tenant tenant)
         {
             Id = Guid.NewGuid();
             Address = address;
             Type = type;
             NumberOfBedrooms = numberOfBedrooms;
+            CurrentTenant = tenant;
+            IssueSeverity = new List<IIssue>();
+
         }
 
         public override string? ToString()

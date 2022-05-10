@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace EstateMaintenance
 {
-    internal interface IProperty
+    public interface IProperty
     {
         public Guid Id { get; set; }
         public string Address { get; set; }
-
+        public Tenant CurrentTenant { get; set; }
+        public List<IIssue> Issues { get; set; }
     }
 }

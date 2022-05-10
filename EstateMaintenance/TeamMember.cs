@@ -9,11 +9,12 @@ namespace EstateMaintenance
 {
     public class TeamMember : IPerson, IStaff
     {
+
         public Guid Id { get; set; }
 
         public string Fname { get; set; }
 
-        public string Lname { get; set; }
+        public string Sname { get; set; }
 
         public string Username { get; set; }
 
@@ -25,7 +26,7 @@ namespace EstateMaintenance
         {
             Id = Guid.NewGuid();
             Fname = fname;
-            Lname = sname;
+            Sname = sname;
             Username = username;
             Password = password;
             Type = StaffType.TEAM_MEMBER;

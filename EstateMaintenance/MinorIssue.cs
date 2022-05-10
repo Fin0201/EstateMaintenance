@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace EstateMaintenance
 {
-    internal class MinorIssue : IIssue
+    public class MinorIssue : IIssue
     {
         public Guid Id { get; set; }
 
         public string Description { get; set; }
 
-        public DateTime TimeStamp { get; set; }
+        public DateTime Timestamp { get; set; }
 
-
-        public MinorIssue(Guid id, strig issueName, DateTime timeStamp)
+        public MinorIssue(string description, DateTime timestamp)
         {
             Id = Guid.NewGuid();
-            Description = Description
-            TimeStamp = TimeStamp;
+            Description = description;
+            Timestamp = DateTime.Now;
         }
-
         public override string? ToString()
         {
-            return $"Description: {Description} Created on: {TimeStamp}";
+            return $"Description: {Description} Created On: {Timestamp}";
         }
     }
 }

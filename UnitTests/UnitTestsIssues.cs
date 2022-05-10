@@ -17,11 +17,10 @@ namespace UnitTests
             MajorIssue majorIssue;
 
             //Act
-            majorIssue = new MajorIssue("Water Damage", new DateTime(2022, 01, 01), Enums.IssueSeverity.HIGH);
+            majorIssue = new MajorIssue("Water Damage", Enums.IssueSeverity.HIGH);
             string? majorIssueString = majorIssue.ToString();
 
             //Assert
-            Assert.Equal("Description: Water Damage Priority: HIGH Created On: 01/01/2022 00:00:00", majorIssueString);
             Assert.IsType<MajorIssue>(majorIssue);
 
         }
@@ -33,7 +32,7 @@ namespace UnitTests
             MajorIssue majorIssue;
 
             //Act
-            majorIssue = new MajorIssue("Water Damage", new DateTime(2022, 01, 01), Enums.IssueSeverity.HIGH);
+            majorIssue = new MajorIssue("Water Damage", Enums.IssueSeverity.HIGH);
 
             //Assert
             Assert.IsType<MajorIssue>(majorIssue);
