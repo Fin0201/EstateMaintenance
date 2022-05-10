@@ -17,12 +17,22 @@ namespace EstateMaintenance
 
         public IssueSeverity Severity { get; set; }
 
-        public MajorIssue(string description, DateTime timestamp, IssueSeverity severity)
+        public bool Open { get; set; }
+
+        public List<Purchase> PurchaseList { get; set; }
+
+
+        public List<TimeLog> TimeLogList { get; set; }
+
+        public MajorIssue(string description, IssueSeverity severity)
         {
             Id = Guid.NewGuid();
             Description = description;
             Timestamp = DateTime.Now;
             Severity = severity;
+            Open = true;
+            PurchaseList = new List<Purchase>();
+            TimeLogList = new List<TimeLog>();
         }
 
         public override string? ToString()

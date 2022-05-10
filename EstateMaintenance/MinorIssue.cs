@@ -14,11 +14,20 @@ namespace EstateMaintenance
 
         public DateTime Timestamp { get; set; }
 
-        public MinorIssue(string description, DateTime timestamp)
+        public bool Open { get; set; }
+
+        public List<Purchase> PurchaseList { get; set; }
+
+        public List<TimeLog> TimeLogList { get; set; }
+
+        public MinorIssue(string description)
         {
             Id = Guid.NewGuid();
             Description = description;
             Timestamp = DateTime.Now;
+            Open = true;
+            PurchaseList = new List<Purchase>();
+            TimeLogList = new List<TimeLog>();
         }
         public override string? ToString()
         {

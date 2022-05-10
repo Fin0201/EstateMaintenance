@@ -14,7 +14,11 @@ namespace EstateMaintenance
 
         public DateTime Timestamp { get; set; }
 
+        public bool Open { get; set; }
 
+        public List<Purchase> PurchaseList { get; set; }
+
+        public List<TimeLog> TimeLogList { get; set; }
 
     }
 }

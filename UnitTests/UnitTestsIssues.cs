@@ -22,6 +22,7 @@ namespace UnitTests
 
             //Assert
             Assert.IsType<MajorIssue>(majorIssue);
+            Assert.Equal(majorIssueString, $"Description: Water Damage Priority: HIGH Created On: {DateTime.Now}");
 
         }
 

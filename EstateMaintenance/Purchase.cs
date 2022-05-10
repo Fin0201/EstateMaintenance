@@ -9,23 +9,27 @@ namespace EstateMaintenance
     public class Purchase
     {
         public Guid Id { get; set; }
-        public string Description { get; set; }
-        public string Cost { get; set; }
+
+        public string? Description { get; set; }
+
+        public double Cost { get; set; }
+
         public DateTime CreatedOn { get; set; }
+
         public TeamMember? CreatedBy { get; set; }
 
-        public Purchase(Guid id, string description, string cost, DateTime createdOn, TeamMember? createdBy)
+        public Purchase(string? description, double cost, TeamMember? createdBy)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Description = description;
             Cost = cost;
-            CreatedOn = createdOn;
+            CreatedOn = DateTime.Now;
             CreatedBy = createdBy;
         }
 
-        public override string ToString()
+        public override string? ToString()
         {
-            return $"ID: {Id} Desc: {Description} Cost: £{Cost} Created on: {CreatedOn}";
+            return $"ID: {Id} Desc: {Description} Cost: £{Cost} Created On: {CreatedOn}";
         }
     }
 }

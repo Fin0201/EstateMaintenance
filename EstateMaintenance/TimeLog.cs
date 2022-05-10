@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstateMaintenance
 {
-    internal class TimeLog
+    public class TimeLog
     {
         public Guid Id { get; set; }
 
@@ -16,17 +16,19 @@ namespace EstateMaintenance
 
         public TeamMember? MemberOfTeam { get; set; }
 
-        public TimeLog(Guid id, int amountInMins, DateTime loggedOn, TeamMember? memberOfTeam)
+        public TimeLog(int amountInMins, TeamMember? memberOfTeam)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             AmountInMins = amountInMins;
-            LoggedOn = loggedOn;
+            LoggedOn = DateTime.Now;
             MemberOfTeam = memberOfTeam;
         }
 
-        public override string ToString()
+        public override string? ToString()
         {
             return $"ID: {Id} Amount in minutes: {AmountInMins} Team Member: {MemberOfTeam} Logged On: {LoggedOn}";
         }
     }
+
+
 }

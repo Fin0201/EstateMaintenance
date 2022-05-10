@@ -14,14 +14,19 @@ namespace EstateMaintenance
         public string BusinessName { get; set; }
         public CommericalType Type { get; set; }
         public double SizeInSqFoot { get; set; }
+        public Tenant CurrentTenant { get; set; }
 
-        public Commercial(string address, string businessName, CommericalType type, double sizeInSqFoot)
+        public List<IIssue> Issues { get; set; }
+
+        public Commercial(string address, string businessName, CommericalType type, double sizeInSqFoot, Tenant tenant)
         {
             Id = Guid.NewGuid();
             Address = address;
             BusinessName = businessName;
             Type = type;
             SizeInSqFoot = sizeInSqFoot;
+            CurrentTenant = tenant;
+            Issues = new List<IIssue>();
         }
 
         public override string? ToString()

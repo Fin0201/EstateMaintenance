@@ -7,7 +7,7 @@ using static EstateMaintenance.Enums;
 
 namespace EstateMaintenance
 {
-    public class Residential : IProperty
+    internal class Residential : IProperty
     {
         public Guid Id { get; set; }
         public string Address { get; set; }
@@ -22,8 +22,7 @@ namespace EstateMaintenance
             Type = type;
             NumberOfBedrooms = numberOfBedrooms;
             CurrentTenant = tenant;
-            IssueSeverity = new List<IIssue>();
-
+            Issues = new List<IIssue>();
         }
 
         public override string? ToString()
