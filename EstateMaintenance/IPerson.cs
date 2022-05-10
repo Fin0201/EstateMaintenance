@@ -7,7 +7,7 @@ using static EstateMaintenance.Enums;
 
 namespace EstateMaintenance
 {
-    internal interface IPerson
+    public interface IPerson
     {
         public Guid Id { get; set; }
 
